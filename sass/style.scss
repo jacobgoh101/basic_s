@@ -52,6 +52,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "normalize";
 
 /*--------------------------------------------------------------
+# Custom Vars and Mixins
+--------------------------------------------------------------*/
+@import "custom/custom_vars_mixins";
+
+/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
@@ -105,3 +110,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+# Custom Styles
+--------------------------------------------------------------*/
+@import "custom/custom_styles";

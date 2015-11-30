@@ -37,6 +37,10 @@ module.exports = function(grunt) {
       set3: {
         files: 'sass/**/**/*.scss',
         tasks: ['sass', 'postcss']
+      },
+      set4: {
+        files: 'sass/**/**/**/*.scss',
+        tasks: ['sass', 'postcss']
       }
     }
   });
