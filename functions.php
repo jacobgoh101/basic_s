@@ -154,4 +154,4 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load custom-functions.php
  */
-require get_template_directory() . '/custom-functions.php';
+require get_template_directory() . '/custom_functions.php';
