@@ -239,3 +239,111 @@ input.search-field {
 	float: right;
 	margin: $phi * 1rem;
 }
+
+//**** Responsive layout adjustments
+
+@media (max-width: total_site_width()) {
+
+	// Output headings at smaller size
+	@include htags(0.9);
+
+	// redeclare variables to be smaller
+	$default_h_padding: $phi * $phi * 1rem;
+	$default_v_padding: $default_h_padding;
+
+	// Posts and widgets horizontal padding
+	$post_l_padding: $default_h_padding;
+	$post_r_padding: $post_l_padding;
+
+	// Posts and widgets vertical padding
+	$post_t_padding: $default_h_padding / $phi;
+	$post_b_padding: $post_t_padding;
+
+	.hentry, .comments-area, .page-header, .site-main .posts-navigation, .site-main .post-navigation, .paging-navigation {
+		padding-left: $post_l_padding;
+		padding-right: $post_r_padding;
+		padding-top: $post_t_padding;
+		padding-bottom: $post_b_padding;
+	}
+
+	.entry-title {
+		margin-bottom: $post_t_padding;
+	}
+
+	.site-footer {
+		padding: $phi * 1em;
+	}
+
+}
+
+@media (max-width: 900*$px) {
+
+	// Single col layout
+	.content-area {
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+
+	.site-main {
+		margin: 0;
+	}
+
+	.site-content .widget-area {
+		float: none;
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.widget {
+		margin-left: 0;
+		margin-bottom: $default_gutter;
+	}
+
+}
+
+@media (max-width: 600*$px) {
+
+	@include htags(0.8);
+
+}
+
+@media (max-width: 400*$px) {
+
+	@include htags(0.7);
+
+	// redeclare variables to be smaller
+	$default_h_padding: $phi * 1rem;
+	$default_v_padding: $default_h_padding;
+
+	// Posts and widgets horizontal padding
+	$post_l_padding: $default_h_padding;
+	$post_r_padding: $post_l_padding;
+	$widget_l_padding: $default_h_padding;
+	$widget_r_padding: $widget_l_padding;
+
+	// Posts and widgets vertical padding
+	$post_t_padding: $default_h_padding / $phi;
+	$post_b_padding: $post_t_padding;
+	$widget_t_padding: $default_h_padding;
+	$widget_b_padding: $widget_t_padding;
+
+	.hentry, .comments-area, .page-header, .site-main .posts-navigation, .site-main .post-navigation, .paging-navigation {
+		padding-left: $post_l_padding;
+		padding-right: $post_r_padding;
+		padding-top: $post_t_padding;
+		padding-bottom: $post_b_padding;
+	}
+
+	.entry-title {
+		margin-bottom: $post_t_padding;
+	}
+
+	.widget {
+		padding-left: $widget_l_padding;
+		padding-right: $widget_r_padding;
+		padding-top: $widget_t_padding;
+		padding-bottom: $widget_b_padding;
+	}
+
+}
