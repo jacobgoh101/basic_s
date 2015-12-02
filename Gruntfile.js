@@ -33,15 +33,15 @@ module.exports = function(grunt) {
       set2: {
         files: 'sass/**/*.scss',
         tasks: ['sass', 'postcss']
-      },
-      set3: {
-        files: 'sass/**/**/*.scss',
-        tasks: ['sass', 'postcss']
-      },
-      set4: {
-        files: 'sass/**/**/**/*.scss',
-        tasks: ['sass', 'postcss']
-      }
+      }//,
+      //set3: {
+        //files: 'sass/**/**/*.scss',
+        //tasks: ['sass', 'postcss']
+      //},
+      //set4: {
+        //files: 'sass/**/**/**/*.scss',
+        //tasks: ['sass', 'postcss']
+      //} 
     }
   });
   grunt.loadNpmTasks('grunt-contrib-sass');
