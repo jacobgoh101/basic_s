@@ -73,7 +73,7 @@ function basic_underscores_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'basic_underscores_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => 'ebe8e5',
 		'default-image' => '',
 	) ) );
 }
