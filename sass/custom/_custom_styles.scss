@@ -111,6 +111,18 @@ ul, ol {
 	@include sticky_post();
 }
 
+.post-thumbnail {
+	margin-top: $default_gutter;
+	margin-right: -$post_r_padding;
+	margin-bottom: $default_gutter;
+	margin-left: -$post_l_padding;
+	img {
+		min-width: 100%;
+		vertical-align: bottom;
+	}
+	@include post_thumbnail();
+}
+
 // Centers category headers
 .page-header .page-title {
 	text-align: center;
@@ -143,6 +155,31 @@ ul, ol {
 	padding: 0.8em 1.2em;
 	margin-bottom: $default_gutter;
 	@include entry_meta();
+}
+
+.continue_btn {
+	text-align: center;
+}
+
+.entry-content {
+	a.more-link {
+		font-size: 18*$px;
+		font-weight: 700;
+		display: inline-block;
+		padding: 1em $phi * 1em;
+		margin: 2em 0 .5em 0;
+		&:before {
+			font-family: "FontAwesome";
+			content: "\f0a4";
+			margin-right: 0.5em;
+		}
+		&:after {
+			font-family: "FontAwesome";
+			content: "\f0a5";
+			margin-left: 0.5em;
+		}
+		@include more_link();
+	}
 }
 
 .entry-footer {
@@ -243,6 +280,32 @@ input.search-field {
 	width: 100%;
 }
 
+// Widget above header
+
+.aboveheader {
+	max-width: total_site_width();
+	margin: 0 auto;
+	text-align: right;
+	font-size: 20*$px;
+	a {
+		margin-right: 0.618em;
+		&:link, &:visited {
+			opacity: 0.75;
+		}
+		&:hover, &:active {
+			opacity: 1;
+		}
+	}
+}
+
+// Widget above content
+
+.abovecontent {
+	max-width: total_site_width();
+	margin: 0 auto;
+	@include main_panel();
+}
+
 // Widget icons
 
 .widget_recent_comments ul {
@@ -289,30 +352,6 @@ input.search-field {
 }
 
 
-// Temp basic menu, to be replace later
-.main-navigation {
-	clear:none;
-	float: none;
-	width: auto;
-	ul {
-		float: right;
-		padding: 0 1em;
-		li {
-			float: left;
-			a {
-				padding: $phi * 1rem;
-			}
-			ul {
-				display: none;
-			}
-		}
-	}
-}
-
-.menu-toggle {
-	float: right;
-	margin: $phi * 1rem;
-}
 
 
 //**** Responsive layout adjustments
@@ -339,6 +378,13 @@ input.search-field {
 		padding-right: $post_r_padding;
 		padding-top: $post_t_padding;
 		padding-bottom: $post_b_padding;
+	}
+
+	.post-thumbnail {
+		margin-top: $default_gutter;
+		margin-right: -$post_r_padding;
+		margin-bottom: $default_gutter;
+		margin-left: -$post_l_padding;
 	}
 
 	.entry-title {
@@ -408,6 +454,13 @@ input.search-field {
 		padding-right: $post_r_padding;
 		padding-top: $post_t_padding;
 		padding-bottom: $post_b_padding;
+	}
+
+	.post-thumbnail {
+		margin-top: $default_gutter;
+		margin-right: -$post_r_padding;
+		margin-bottom: $default_gutter;
+		margin-left: -$post_l_padding;
 	}
 
 	.entry-title {

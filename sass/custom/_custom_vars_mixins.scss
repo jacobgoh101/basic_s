@@ -57,9 +57,6 @@ $widget_b_padding: $widget_t_padding;
 // TYPOGRAPHY
 // **-----
 
-@import url("//fonts.googleapis.com/css?family=Raleway:300,400,700,900");
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
-
 
 // DEFAULT _S "TYPOGRAPHY" VARS
 $font__main: Raleway, "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
@@ -239,5 +236,56 @@ $color__entry_highlight: #7B6048;
 @mixin site_footer(){
 	a {
 		color: darken($color__link, 5%);
+	}
+}
+
+@mixin post_thumbnail(){
+	border-top: 10 * $px solid $color__link;
+	border-bottom: 10 * $px solid $color__link;
+}
+
+@mixin more_link(){
+	background: none;
+	border-top: 3*$px solid saturate(lighten($color__link, 45%), 10%);
+	border-bottom: 3*$px solid saturate(lighten($color__link, 45%), 10%);
+	color: $color__link;
+}
+
+// Menu coloring
+
+@mixin child_menu_expanded(){
+	background-color: darken(saturate($color__background-sub_panel, 5%), 1%);
+	border: 1*$px solid $color__border-sub_panel;
+	border-bottom: 0;
+	box-shadow: 0 2*$px 5*$px rgba(0, 0, 0, 0.1);
+}
+
+@mixin child_menu_item(){
+	a, a:link, a:visited {
+		border: 0;
+		border-top: 1*$px solid darken($color__border-sub_panel, 2%);
+	}
+	a:hover {
+	background-color: lighten(saturate($color__background-sub_panel, 3%), 0.25%);
+	}
+}
+
+@mixin compact_menu_item(){
+	border-top: 1*$px solid $color__border-sub_panel;
+	&:hover {
+		border-bottom-color: transparent;
+		background-color: darken(saturate($color__background-sub_panel, 5%), 1%);
+	}
+}
+
+@mixin child_menu_compact(){
+	background-color: darken(saturate($color__background-sub_panel, 7%), 2%);
+}
+
+@mixin child_menu_compact_item(){
+	border-top: 1*$px solid darken($color__border-sub_panel, 2%);
+	&:hover {
+		border-bottom-color: transparent;
+		background-color: darken(saturate($color__background-sub_panel, 8%),3%);
 	}
 }

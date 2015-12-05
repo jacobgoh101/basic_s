@@ -24,12 +24,6 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'basic-underscores' ); ?></a>
 
-	<?php
-	if ( is_dynamic_sidebar('aboveheader') ) {
-		dynamic_sidebar('aboveheader');
-	}
-	?><!-- Widget location to hold social icons -->
-
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<?php if ( is_front_page() && is_home() ) : ?>
@@ -45,16 +39,9 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="screen-reader-text">Main Navigation</h1>
-			<div class="navicon closed"><i class="fa fa-navicon"></i></div>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 2 ) ); ?>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'basic-underscores' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<?php 
-	if ( is_front_page() && !is_paged() && is_dynamic_sidebar('abovecontent') ) {
-		dynamic_sidebar('abovecontent');
-	}
-	?><!-- Widget location to hold slider -->
-	
 	<div id="content" class="site-content">
