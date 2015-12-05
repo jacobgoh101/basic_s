@@ -25,27 +25,28 @@ module.exports = function(grunt) {
         'style.css' : 'style.css'
       }
     },
+    notify: {
+      postcss: {
+        options: {
+          title: 'Task Complete',  // optional
+          message: 'Sass and PostCSS finished running', //required
+        }
+      }
+    },
     watch: {
       set1: {
         files: 'sass/*.scss',
-        tasks: ['sass', 'postcss']
+        tasks: ['sass', 'postcss', 'notify', 'browserSync']
       },
       set2: {
         files: 'sass/**/*.scss',
-        tasks: ['sass', 'postcss']
-      }//,
-      //set3: {
-        //files: 'sass/**/**/*.scss',
-        //tasks: ['sass', 'postcss']
-      //},
-      //set4: {
-        //files: 'sass/**/**/**/*.scss',
-        //tasks: ['sass', 'postcss']
-      //} 
+        tasks: ['sass', 'postcss', 'notify', 'browserSync']
+      }
     }
   });
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.registerTask('default',['watch']);
+grunt.loadNpmTasks('grunt-contrib-sass');
+grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-postcss');
+grunt.loadNpmTasks('grunt-notify');
+grunt.registerTask('default',['watch']);
 }

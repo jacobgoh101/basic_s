@@ -1,6 +1,6 @@
 .main-navigation {
 	h1 {
-	  display: none !important;
+		display: none !important;
 	}
 	ul {
 		margin: 0;
@@ -24,8 +24,11 @@
 				width: 1.4em;
 				padding-right: 0.5em;
 				margin-left: 0.5em;
-				margin-right: -0.5em;
-			}
+				margin-right: 0.5em;
+				position: absolute;
+				right: 0;
+				//font-size: 1.5rem;
+			} 
 			/* nav child menu */
 			ul {
 				display: none;
@@ -59,6 +62,9 @@
 			float: left;
 			a {
 				padding: $phi * 1rem;
+				span {
+					display: none;
+				}
 			}
 			/* expanded nav child menu */
 			ul {
@@ -71,10 +77,16 @@
 					float: none;
 					a {
 						width: 100%;
-						line-height: 4.5rem;                                  
+						line-height: 3rem;                                  
 						padding: 0 2.1875rem;
 					}
 					@include child_menu_item();
+				}
+			}
+			&:hover{
+				ul{
+					display: inline-block;
+					margin-right: 10 * $phi * 1em;
 				}
 			}
 		}

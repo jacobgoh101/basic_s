@@ -4,7 +4,7 @@ jQuery(document).ready(function($){
 
   var menu_ul = $('.main-navigation').find('ul').first();
 
-  menu_ul.children('.menu-item-has-children').children('a').append('<span class="mytheme_menu_switch">+</span>');
+  menu_ul.children('.menu-item-has-children').children('a').append('<span class="mytheme_menu_switch"><i class="fa fa-plus"></i></span>');
 
   // Touch friendly expanded nav
   // $(menu_ul + ' li span').click(function(event){
@@ -27,7 +27,7 @@ jQuery(document).ready(function($){
       // hide child menu
       $(child_menu).removeClass('childopen');
       // set this open menu switch to +
-      $(this).html('+');
+      $(this).html('<i class="fa fa-plus"></i>');
 
     } else {
       // if it's closed, open it
@@ -37,12 +37,12 @@ jQuery(document).ready(function($){
       menu_ul.children('ul').removeClass('childopen');
       // set any open menu switch symbols back to +
       // $(menu_ul + ' li span').html('+');
-      menu_ul.children('li').children('span').html('+');
+      menu_ul.children('li').children('span').html('<i class="fa fa-plus"></i>');
 
       // show correct child menu
       $(child_menu).addClass('childopen');
       // set this open menu switch to -
-      $(this).html('-');
+      $(this).html('<i class="fa fa-minus"></i>');
 
       return false;
 
@@ -56,13 +56,13 @@ jQuery(document).ready(function($){
 
       menu_ul.addClass('show');
       menu_ul.removeClass('closed').addClass('open');
-      menu_ul.children('.fa').removeClass('fa-navicon').addClass('fa-close');
+      $('.fa').removeClass('fa-navicon').addClass('fa-times');
 
     } else {
 
       menu_ul.removeClass('show');
       menu_ul.removeClass('open').addClass('closed');
-      menu_ul.children('.fa').removeClass('fa-close').addClass('fa-navicon');
+      $('.fa').removeClass('fa-times').addClass('fa-navicon');
 
     }
 
