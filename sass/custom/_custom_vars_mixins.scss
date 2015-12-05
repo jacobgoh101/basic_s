@@ -58,6 +58,7 @@ $widget_b_padding: $widget_t_padding;
 // **-----
 
 @import url("//fonts.googleapis.com/css?family=Raleway:300,400,700,900");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 
 
 // DEFAULT _S "TYPOGRAPHY" VARS
@@ -109,7 +110,7 @@ $htag_vmargins: 0.563, 0.625, 1.313, 1.313, 1.313, 0.75;
 
 
 // DEFAULT _S "COLORS" VARS
-$color__background-body: #fff;
+$color__background-body: #ebe8e5;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
@@ -119,10 +120,10 @@ $color__background-ins: #fff9c0;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
+$color__link: #7b6e62;
+$color__link-visited: $color__link;
+$color__link-hover: $color__link;
+$color__text-main: #505050;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -132,6 +133,111 @@ $color__border-abbr: #666;
 
 // /end
 
-@mixin guide(){
-	background: #f2f2f2;
+// custom color variables
+
+$color__background-main_panel: #fff;
+$color__border-main_panel: #DFD8CF;
+
+$color__background-sub_panel: #ebe8e5;
+$color__border-sub_panel: #e8e0da;
+$color__text-sub_panel: #76624e;
+
+$color__entry_highlight: #7B6048;
+
+// Mixins to apply coloring
+
+@mixin body(){
+	border-top: 2*$px solid $color__border-main_panel;
+	background-color: $color__background-body;
+}
+
+@mixin links(){
+	a {
+		text-decoration: none;
+		border-bottom: 1px dotted transparent;
+	}
+	a:hover, a:active {
+		border-bottom: 1px dotted $color__link;
+	}
+}
+
+@mixin blockquote(){
+	background-color: $color__background-sub_panel;
+	border: 1*$px solid $color__border-sub_panel;
+	color: $color__text-sub_panel;
+	a, a:visited, a:active {
+		color: inherit;
+	}
+}
+
+@mixin main_panel(){
+	background-color: $color__background-main_panel;
+	border: 1*$px solid $color__border-main_panel;
+	box-shadow: 0 1*$px 1*$px rgba(33, 19, 4, 0.07);
+}
+
+@mixin sub_panel(){
+	background-color: $color__background-sub_panel;
+	border: 1*$px solid $color__border-sub_panel;
+	box-shadow: inset 0 2*$px 5*$px rgba(194, 188, 184, 0.1);
+	color: $color__text-sub_panel;
+	a, a:visited, a:active {
+		color: inherit;
+	}
+}
+
+@mixin widget-divider(){
+	border-bottom: 1 * $px solid $color__border-sub_panel;
+}
+
+@mixin widget-divider-top(){
+	border-top: 1 * $px solid $color__border-sub_panel;
+}
+
+@mixin entry_meta(){
+	background-color: $color__link;
+	color: $color__background-main_panel;
+	a, a:visited, a:active {
+		color: inherit;
+	}
+	a:hover, a:active {
+		border-bottom: 1px dotted $color__background-main_panel;
+	}
+}
+
+@mixin dotted_link(){
+	a, a:link, a:visited {
+		border-bottom: 1*$px dotted $color__entry_highlight;
+		background-color: lighten($color__background-sub_panel, 2%);
+		color: $color__text-main;
+	}
+	a:hover, a:active {
+		background-color: $color__background-sub_panel;
+	}
+}
+
+@mixin entry_footer(){
+	color: $color__link;
+	border-bottom: 2*$px solid saturate(lighten($color__link, 45%), 10%);
+	span {
+		border-top: 2*$px solid saturate(lighten($color__link, 45%), 10%);
+	}
+}
+
+@mixin comment(){
+	background-color: rgba(221, 193, 174, 0.05);
+	border: 1*$px solid rgba(108, 67, 38, 0.05);
+	box-shadow: inset 0 2*$px 5*$px rgba(194, 188, 184, 0.05);
+}
+
+@mixin sticky_post(){
+	border-width: 7*$px;
+	border-color: $color__background-body;
+	box-shadow: 0 3*$px 6*$px rgba(33, 19, 4, 0.15);
+}
+
+@mixin site_footer(){
+	a {
+		color: darken($color__link, 5%);
+	}
 }
